@@ -195,7 +195,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成论文目录
-\tableofcontents
+\begingroup
+  \let\oldaddcontentsline\addcontentsline
+  \renewcommand{\addcontentsline}[3]{} % 暂时禁用目录自身的目录项
+  \tableofcontents
+\endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成插图清单。如无需插图清单则可注释掉下述语句。
